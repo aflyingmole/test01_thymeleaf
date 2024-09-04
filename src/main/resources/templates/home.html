@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Home입니다!!!!!</h1>
+<div th:text="${msg}">헬로</div>
+[[${msg}]]<br> 
+<ul>
+	<li><a th:href="@{/sample/test01}">sample/test01</a></li>
+	<!-- test02Date 매핑경로로 이동하여 date가 출력되도록 해보세요 -->
+	<li><a th:href="@{/sample/test02Date}">sample/test02Date</a></li>
+	<li><a th:href="@{/sample/link1(id='aaa',name='홍길동')}">sample/link1</a></li>
+	<li><a th:href="@{/sample/link2/aaa/1234}" >sample/link2</a></li>
+	<li><a th:href="@{/sample/link2/{id}/{pwd}(id='hello',pwd='1234')}" >sample/link3</a></li>
+	<li><a th:href="@{/sample/form}">form</a></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>sample/test01.html</title>
+</head>
+<body>
+<h1>test01.html</h1>
+<ul>
+	<li th:each="flower : ${list1}">
+		<span th:text="${flower}"></span>
+	</li>
+</ul>
+<h2>사용자 목록</h2>
+<ul>
+	<li th:each="user,status : ${list2}">
+		<span th:text="'index:' + ${status.index}"></span>
+		<span th:text="'count:' +${status.count}"></span>
+		<span th:text="${user.username}"></span>
+		<span th:text="${user.password}"></span>
+	</li>
+</ul>
+<!-- with : 지역변수 선언 -->
+<div th:with="user1=${list2[0]}">
+	<span th:text="${user1.username}"></span>
+	<span th:text="${user1.password}"></span>
+</div>
+<!-- Map에 저장된 value값 꺼내오기 -->
+<div th:text="${mem['name']}"></div>
+<div th:text="${mem['email']}"></div>
+
+<!-- Map에 User객체를 담고 꺼내와서 출력해 보세요 -->
+<div th:text="${map1['user1']}"></div>
+<div th:text="${map1['user2']}"></div>
+<div th:text="${map1['user1'].username}"></div>
+<div th:text="${map1['user1'].password}"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

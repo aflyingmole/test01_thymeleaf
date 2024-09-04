@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- #dates :  date객체의 날짜 포맷형식 설정하기 -->
+<div th:text="${#dates.format(date1,'yyyy-MM-dd HH:mm:ss')}"></div>
+Year : <span th:text="${#dates.year(date1)}"></span>
+Month : <span th:text="${#dates.month(date1)}"></span>
+Date : <span th:text="${#dates.day(date1)}"></span>
+
+<!-- #temporals : 자바8버전의 date지원  -->
+<div th:text="${#temporals.format(date2,'yyyy-MM-dd HH:mm:ss')}"></div>
+Year : <span th:text="${#temporals.year(date2)}"></span>
+Month : <span th:text="${#temporals.month(date2)}"></span>
+Date : <span th:text="${#temporals.day(date2)}"></span>
+
+<div th:with="text='Hello World'">
+	[[${text}]]<br>
+	<span th:text="${#strings.substring(text,6,11)}"></span>
+	<span th:text="${#strings.length(text)}"></span>
+	<span th:text="${#strings.replace(text,'Hello','안녕')}"></span>
+</div>
+
+
+</body>
+</html>
+
+
+

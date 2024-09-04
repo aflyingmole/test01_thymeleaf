@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>sample/form.html</title>
+<script th:inline="javascript">
+	let id=[[${mem.id}]];
+	let pwd=[[${mem.pwd}]]
+	console.log(id,pwd);
+</script>
+</head>
+<body>
+<h1>회원정보</h1>
+	<form th:object="${mem}" th:action="@{/sample/formOk}">
+		회원아이디 <input type="text" th:field="*{id}"><br>
+		비밀번호 <input type="text" th:field="*{pwd}"><br>
+		이메일 <input type="text" th:field="*{email}"><br>
+		미성년자 <input type="checkbox" th:field="*{minor}"><br>
+		<input type="submit" value="저장">
+	</form>
+</body>
+</html>
